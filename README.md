@@ -10,4 +10,4 @@ This repository contains two main files:
 The evaluation procedure for utility and empirical privacy is outlined in our work.
 
 ## DP Rewriting Mechanisms
-We utilize two mechanisms in our work, [https://github.com/sjmeis/Diffractor](1-Diffractor) and [https://github.com/trusthlt/dp-bart-private-rewriting](DP-BART), which are publicly available at the provided links.
+We utilize two mechanisms in our work, [1-Diffractor](https://github.com/sjmeis/Diffractor) and [DP-BART](https://github.com/trusthlt/dp-bart-private-rewriting), which are publicly available at the provided links.
