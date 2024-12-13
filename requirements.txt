@@ -1,0 +1,9 @@
+evaluate
+nltk
+numpy
+pandas
+sentence_transformers
+spacy
+torch
+tqdm
+transformers
