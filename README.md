@@ -1,5 +1,5 @@
 # EpsilonDistributor
-Anonymous repository for the submission to CODASPY 2025: *Spend Your Budget Wisely: Towards an Intelligent Distribution of the Privacy Budget in Differentially Private Text Rewriting*
+Code repository for the CODASPY 2025 paper: *Spend Your Budget Wisely: Towards an Intelligent Distribution of the Privacy Budget in Differentially Private Text Rewriting*
 
 ## Contents
 This repository contains two main files:
