@@ -41,7 +41,6 @@ class EpsilonDistributor:
 
         self.model = SentenceTransformer(model_checkpoint, device=self.device)
         self.nlp = spacy.load("en_core_web_md")
-        #self.pos_informativeness = {'NN': 15, 'PR':14, 'VB':8, 'CD':6, 'JJ':3.7, 'RB':3.4} # percentage
         self.pos_informativeness = {'NN': 14, 'PR':7, 'VB':15, 'CD':2, 'JJ':5, 'RB':5}
         self.lemmatizer = WordNetLemmatizer()
 
@@ -286,7 +285,6 @@ class EpsilonDistributor:
             list: List of tuples containing token and its distributed epsilon value.
         """
         
-        #tokens = nltk.word_tokenize(sentence.translate(str.maketrans("", "", string.punctuation)))
         tokens = nltk.word_tokenize(sentence)
         punct = [(i, x) for i, x in enumerate(tokens) if x.isalnum() == False]
         tokens = [x for i, x in enumerate(tokens) if (i, x) not in punct]
@@ -300,20 +298,3 @@ class EpsilonDistributor:
             final_distributed_epsilon.insert(tup[0], (tup[1], None))
 
         return final_distributed_epsilon
-
-    # def print_scores(sel):
-    #     """
-    #     Prints the scores of tokens in the sentence along with the final epsilon proportion and distributed epsilon.
-
-    #     Returns:
-    #         None
-    #     """
-    #     print(self.sentence)
-    #     print("Parameters : ", f"Total Epsilon: {self.total_epsilon} | ", f"Ner Weight: {self.use_ner} | ", f"Use IC: {self.use_ic} | ", f"Use POS: {self.use_pos} | ","\n", f"Use Similarity Sentence: {self.use_sim_sent} | ", f"Use Similarity Word: {self.use_sim_word} | ")
-    #     print()
-    #     print(f"{'Token':<15} {'Final Score Σ1':<20} {'Final Epsilon Proportion':<30} {'Final Epsilon Distribution':<30}")
-    #     print("-" * 90)
-    #     for idx in range(n):
-    #         print(f"{self.tokens[idx]:<15} {self.final_scores[idx][1]:<20.5f} {self.final_norm_epsilon[idx][1]:<30.5f} {self.final_distributed_epsilon[idx][1]:<30.5f}")
-    #     print("-" * 90)
-    #     print(f"{'Total':<15} {  sum(list(zip(*self.final_scores))[1]):<20.5f} {sum(list(zip(*self.final_norm_epsilon))[1]):<30.5f} { sum(list(zip(*self.final_distributed_epsilon))[1]) :<30.5f}")
